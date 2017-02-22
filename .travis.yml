@@ -1,2 +1,8 @@
 language: scala
+cache:
+  directories:
+    - $HOME/.ivy2/cache
 script: sbt test
+after_script:
+  - find $HOME/.sbt -name "*.lock" | xargs rm | true
+  - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm | true
