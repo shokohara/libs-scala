@@ -10,6 +10,8 @@ version := "1.0.0"
 
 resolvers += "bintray/non" at "http://dl.bintray.com/non/maven" // https://github.com/non/junkion
 
+val monocleVersion = "1.4.0"
+
 libraryDependencies ++= Seq(
   "org.scala-lang" % "scala-compiler" % scalaVersion.value % Provided,
   "org.scala-lang" % "scala-reflect" % scalaVersion.value % Provided, // https://github.com/non/imp
@@ -44,9 +46,12 @@ libraryDependencies ++= Seq(
   "com.twitter" %% "algebird-util" % "0.13.0",
   "com.twitter" %% "algebird-bijection" % "0.13.0",
   "com.twitter" %% "util-collection" % "6.41.0",
+  "com.github.julien-truffaut" %%  "monocle-core"  % monocleVersion,
+  "com.github.julien-truffaut" %%  "monocle-macro" % monocleVersion,
   "com.github.scalaprops" %% "scalaprops" % "0.4.1" % "test",
   "com.github.scalaprops" %% "scalaprops-scalazlaws" % "0.4.1" % "test",
-  "org.typelevel" %% "scalaz-scalatest" % "1.1.2" % "test"
+  "org.typelevel" %% "scalaz-scalatest" % "1.1.2" % "test",
+  "com.github.julien-truffaut" %%  "monocle-law"   % monocleVersion % "test"
   //  "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 )
 
